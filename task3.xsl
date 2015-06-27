@@ -23,7 +23,7 @@
                         <td rowspan='2'>
                             <div>
                                 <xsl:value-of select="scores/cricketbbbfeed
-                                    /matchdetail/team2"/> vs <xsl:value-of select="scores/cricketbbbfeed
+                                    /matchdetail/team2"/> vs. <xsl:value-of select="scores/cricketbbbfeed
                                         /matchdetail/team1"/> 
                             </div>
                            <div>
