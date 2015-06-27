@@ -37,12 +37,9 @@
                                     /matchdetail/team2"/>
                             </div>
                             <div>
-                                <xsl:value-of select="normalize-space
-                                    (substring-after($total,')'))"/>/<xsl:value-of
-                                     select="substring-before(
-                                     substring-after($total,'('),' ')"/> (<xsl:value-of
-                                     select="substring-before(
-                                     substring-after($total,', '),'e')"/>)
+                                <xsl:value-of select="normalize-space(substring-after($total,')'))"/>/<xsl:value-of
+                                     select="substring-before(substring-after($total,'('),' ')"/> (<xsl:value-of
+                                     select="substring-before(substring-after($total,', '),'e')"/>)
                             </div>
                         </td>
                         <td>
@@ -54,12 +51,9 @@
                                  /matchdetail/team1"/>
                             </div>
                             <div>
-                                <xsl:value-of select="normalize-space
-                                (substring-after($total2,')'))"/>/<xsl:value-of
-                                select="substring-before(
-                                substring-after($total2,'('),' ')"/> (<xsl:value-of
-                                select="substring-before(
-                                substring-after($total2,', '),'e')"/>)
+                                <xsl:value-of select="normalize-space(substring-after($total2,')'))"/>/<xsl:value-of
+                                select="substring-before(substring-after($total2,'('),' ')"/> (<xsl:value-of
+                                select="substring-before(substring-after($total2,', '),'e')"/>)
                             </div>
                             
                         </td>
@@ -132,7 +126,7 @@
                         <td>
                             Target
                         </td>
-                        <td>
+                        <td rowspan='2'>
                             Status: <xsl:value-of select="scores/cricketbbbfeed
                                 /matchdetail/result"/>
                         </td>
