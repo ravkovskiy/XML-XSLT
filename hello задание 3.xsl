@@ -138,7 +138,12 @@
                     </tr>
                     <tr align="center">
                         <td>
-                            <xsl:value-of select="format-number(($target - 1) div $maxovers, '###.00', 'd')" />
+                            <xsl:choose>
+                                <xsl:when test="$maxovers!=0">
+                                    <xsl:value-of select="format-number(($target - 1) div $maxovers, '###.00', 'd')" />
+                                </xsl:when>
+                                <xsl:otherwise>-</xsl:otherwise>
+                            </xsl:choose>
                         </td>
                         <td>
                             <xsl:value-of select="scores/cricketbbbfeed
@@ -236,16 +241,5 @@
                 </table>
             </body>
         </html>
-        <h1>
-            <xsl:value-of select="format-number(($target - 1) div $maxovers, '###.00', 'd')" />
-        </h1>
-        <div>
-            <xsl:value-of select="substring-before(substring-after($total,')'),'0')"/> 
-        </div>
-        <div>
-            <xsl:value-of select ="name(scores/cricketbbbfeed
-                /currentscores/bowler)"/>
-        </div>
-        <xsl:value-of select="scores/inningsinfo/match/innings[2]/total"/>
     </xsl:template>
 </xsl:stylesheet>
