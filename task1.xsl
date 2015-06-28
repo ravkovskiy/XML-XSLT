@@ -60,57 +60,190 @@
                                  <xsl:variable name="time" select="format-number(normalize-space(substring-after($totaltime, ':')), '## ##', 'dd')" />
                                  <xsl:variable name="totaltimemin" select="substring-after($time, ' ')"/>
                                  <xsl:variable name="totaltimehour" select="substring-before($time, $totaltimemin)"/>
-                                 <xsl:value-of select="$time"/>
-                                 <xsl:value-of select="$totaltimehour"/>
-                                 <xsl:value-of select="$totaltimemin"/>
+                                 <xsl:variable name="departhours" select="substring-before(TD[2]/B[2], ':')"/>
+                                 <xsl:variable name="departmin" select="substring-after(TD[2]/B[2], ':')"/>
+                                 <xsl:variable name="arrivehours" select="substring-before(TD[2]/B[3], ':')"/>
+                                 <xsl:variable name="arrivetmin" select="substring-after(TD[2]/B[3], ':')"/>
+                                 <xsl:variable name="date" select="substring-before(substring-after(TD[2]/STRONG, ' '), ' ')"/>
+                                 <xsl:variable name="year" select="substring-after(substring-after(substring-after(TD[2]/STRONG, ' '), ' '), ' ')"/>
                                  <xsl:choose>
                                      <xsl:when test="substring-before(substring-after(substring-after(TD[2]/STRONG, ' '), ' '), ' ') = 'December'">
                                          <xsl:variable name="moins" select="12"/>
-                                         <xsl:value-of select="$moins"/>
+                                         <xsl:call-template name="arrivedate">
+                                             <xsl:with-param name="moins" select="$moins"/>
+                                             <xsl:with-param name="totaltimehour" select="$totaltimehour"/>
+                                             <xsl:with-param name="totaltimemin" select="$totaltimemin"/>
+                                             <xsl:with-param name="departhours" select="$departhours"/>
+                                             <xsl:with-param name="departmin" select="$departmin"/>
+                                             <xsl:with-param name="arrivehours" select="$arrivehours"/>
+                                             <xsl:with-param name="arrivemin" select="$arrivetmin"/>
+                                             <xsl:with-param name="date" select="$date"/>
+                                             <xsl:with-param name="year" select="$year"/>
+                                         </xsl:call-template>
                                      </xsl:when>
                                      <xsl:when test="substring-before(substring-after(substring-after(TD[2]/STRONG, ' '), ' '), ' ') = 'January'">
                                          <xsl:variable name="moins" select="1"/>
                                          <xsl:value-of select="$moins"/>
+                                         <xsl:call-template name="arrivedate">
+                                             <xsl:with-param name="moins" select="$moins"/>
+                                             <xsl:with-param name="totaltimehour" select="$totaltimehour"/>
+                                             <xsl:with-param name="totaltimemin" select="$totaltimemin"/>
+                                             <xsl:with-param name="departhours" select="$departhours"/>
+                                             <xsl:with-param name="departmin" select="$departmin"/>
+                                             <xsl:with-param name="arrivehours" select="$arrivehours"/>
+                                             <xsl:with-param name="arrivemin" select="$arrivetmin"/>
+                                             <xsl:with-param name="date" select="$date"/>
+                                             <xsl:with-param name="year" select="$year"/>
+                                         </xsl:call-template>
                                      </xsl:when>
                                      <xsl:when test="substring-before(substring-after(substring-after(TD[2]/STRONG, ' '), ' '), ' ') = 'February'">
                                          <xsl:variable name="moins" select="2"/>
                                          <xsl:value-of select="$moins"/>
+                                         <xsl:call-template name="arrivedate">
+                                             <xsl:with-param name="moins" select="$moins"/>
+                                             <xsl:with-param name="totaltimehour" select="$totaltimehour"/>
+                                             <xsl:with-param name="totaltimemin" select="$totaltimemin"/>
+                                             <xsl:with-param name="departhours" select="$departhours"/>
+                                             <xsl:with-param name="departmin" select="$departmin"/>
+                                             <xsl:with-param name="arrivehours" select="$arrivehours"/>
+                                             <xsl:with-param name="arrivemin" select="$arrivetmin"/>
+                                             <xsl:with-param name="date" select="$date"/>
+                                             <xsl:with-param name="year" select="$year"/>
+                                         </xsl:call-template>
                                      </xsl:when>
                                      <xsl:when test="substring-before(substring-after(substring-after(TD[2]/STRONG, ' '), ' '), ' ') = 'March'">
                                          <xsl:variable name="moins" select="3"/>
                                          <xsl:value-of select="$moins"/>
+                                         <xsl:call-template name="arrivedate">
+                                             <xsl:with-param name="moins" select="$moins"/>
+                                             <xsl:with-param name="totaltimehour" select="$totaltimehour"/>
+                                             <xsl:with-param name="totaltimemin" select="$totaltimemin"/>
+                                             <xsl:with-param name="departhours" select="$departhours"/>
+                                             <xsl:with-param name="departmin" select="$departmin"/>
+                                             <xsl:with-param name="arrivehours" select="$arrivehours"/>
+                                             <xsl:with-param name="arrivemin" select="$arrivetmin"/>
+                                             <xsl:with-param name="date" select="$date"/>
+                                             <xsl:with-param name="year" select="$year"/>
+                                         </xsl:call-template>
                                      </xsl:when>
                                      <xsl:when test="substring-before(substring-after(substring-after(TD[2]/STRONG, ' '), ' '), ' ') = 'April'">
                                          <xsl:variable name="moins" select="4"/>
                                          <xsl:value-of select="$moins"/>
+                                         <xsl:call-template name="arrivedate">
+                                             <xsl:with-param name="moins" select="$moins"/>
+                                             <xsl:with-param name="totaltimehour" select="$totaltimehour"/>
+                                             <xsl:with-param name="totaltimemin" select="$totaltimemin"/>
+                                             <xsl:with-param name="departhours" select="$departhours"/>
+                                             <xsl:with-param name="departmin" select="$departmin"/>
+                                             <xsl:with-param name="arrivehours" select="$arrivehours"/>
+                                             <xsl:with-param name="arrivemin" select="$arrivetmin"/>
+                                             <xsl:with-param name="date" select="$date"/>
+                                             <xsl:with-param name="year" select="$year"/>
+                                         </xsl:call-template>
                                      </xsl:when>
                                          <xsl:when test="substring-before(substring-after(substring-after(TD[2]/STRONG, ' '), ' '), ' ') = 'May'">
                                              <xsl:variable name="moins" select="5"/>
                                              <xsl:value-of select="$moins"/>
+                                             <xsl:call-template name="arrivedate">
+                                                 <xsl:with-param name="moins" select="$moins"/>
+                                                 <xsl:with-param name="totaltimehour" select="$totaltimehour"/>
+                                                 <xsl:with-param name="totaltimemin" select="$totaltimemin"/>
+                                                 <xsl:with-param name="departhours" select="$departhours"/>
+                                                 <xsl:with-param name="departmin" select="$departmin"/>
+                                                 <xsl:with-param name="arrivehours" select="$arrivehours"/>
+                                                 <xsl:with-param name="arrivemin" select="$arrivetmin"/>
+                                                 <xsl:with-param name="date" select="$date"/>
+                                                 <xsl:with-param name="year" select="$year"/>
+                                             </xsl:call-template>
                                      </xsl:when>
                                      <xsl:when test="substring-before(substring-after(substring-after(TD[2]/STRONG, ' '), ' '), ' ') = 'June'">
                                          <xsl:variable name="moins" select="6"/>
                                          <xsl:value-of select="$moins"/>
+                                         <xsl:call-template name="arrivedate">
+                                             <xsl:with-param name="moins" select="$moins"/>
+                                             <xsl:with-param name="totaltimehour" select="$totaltimehour"/>
+                                             <xsl:with-param name="totaltimemin" select="$totaltimemin"/>
+                                             <xsl:with-param name="departhours" select="$departhours"/>
+                                             <xsl:with-param name="departmin" select="$departmin"/>
+                                             <xsl:with-param name="arrivehours" select="$arrivehours"/>
+                                             <xsl:with-param name="arrivemin" select="$arrivetmin"/>
+                                             <xsl:with-param name="date" select="$date"/>
+                                             <xsl:with-param name="year" select="$year"/>
+                                         </xsl:call-template>
                                      </xsl:when>
                                      <xsl:when test="substring-before(substring-after(substring-after(TD[2]/STRONG, ' '), ' '), ' ') = 'July'">
                                          <xsl:variable name="moins" select="7"/>
                                          <xsl:value-of select="$moins"/>
+                                         <xsl:call-template name="arrivedate">
+                                             <xsl:with-param name="moins" select="$moins"/>
+                                             <xsl:with-param name="totaltimehour" select="$totaltimehour"/>
+                                             <xsl:with-param name="totaltimemin" select="$totaltimemin"/>
+                                             <xsl:with-param name="departhours" select="$departhours"/>
+                                             <xsl:with-param name="departmin" select="$departmin"/>
+                                             <xsl:with-param name="arrivehours" select="$arrivehours"/>
+                                             <xsl:with-param name="arrivemin" select="$arrivetmin"/>
+                                             <xsl:with-param name="date" select="$date"/>
+                                             <xsl:with-param name="year" select="$year"/>
+                                         </xsl:call-template>
                                      </xsl:when>
                                      <xsl:when test="substring-before(substring-after(substring-after(TD[2]/STRONG, ' '), ' '), ' ') = 'August'">
                                          <xsl:variable name="moins" select="8"/>
                                          <xsl:value-of select="$moins"/>
+                                         <xsl:call-template name="arrivedate">
+                                             <xsl:with-param name="moins" select="$moins"/>
+                                             <xsl:with-param name="totaltimehour" select="$totaltimehour"/>
+                                             <xsl:with-param name="totaltimemin" select="$totaltimemin"/>
+                                             <xsl:with-param name="departhours" select="$departhours"/>
+                                             <xsl:with-param name="departmin" select="$departmin"/>
+                                             <xsl:with-param name="arrivehours" select="$arrivehours"/>
+                                             <xsl:with-param name="arrivemin" select="$arrivetmin"/>
+                                             <xsl:with-param name="date" select="$date"/>
+                                             <xsl:with-param name="year" select="$year"/>
+                                         </xsl:call-template>
                                      </xsl:when>
                                      <xsl:when test="substring-before(substring-after(substring-after(TD[2]/STRONG, ' '), ' '), ' ') = 'September'">
                                          <xsl:variable name="moins" select="9"/>
                                          <xsl:value-of select="$moins"/>
+                                         <xsl:call-template name="arrivedate">
+                                             <xsl:with-param name="moins" select="$moins"/>
+                                             <xsl:with-param name="totaltimehour" select="$totaltimehour"/>
+                                             <xsl:with-param name="totaltimemin" select="$totaltimemin"/>
+                                             <xsl:with-param name="departhours" select="$departhours"/>
+                                             <xsl:with-param name="departmin" select="$departmin"/>
+                                             <xsl:with-param name="arrivehours" select="$arrivehours"/>
+                                             <xsl:with-param name="arrivemin" select="$arrivetmin"/>
+                                             <xsl:with-param name="date" select="$date"/>
+                                             <xsl:with-param name="year" select="$year"/>
+                                         </xsl:call-template>
                                      </xsl:when>
                                      <xsl:when test="substring-before(substring-after(substring-after(TD[2]/STRONG, ' '), ' '), ' ') = 'October'">
                                          <xsl:variable name="moins" select="10"/>
-                                         <xsl:value-of select="$moins"/>
+                                         <xsl:call-template name="arrivedate">
+                                             <xsl:with-param name="moins" select="$moins"/>
+                                             <xsl:with-param name="totaltimehour" select="$totaltimehour"/>
+                                             <xsl:with-param name="totaltimemin" select="$totaltimemin"/>
+                                             <xsl:with-param name="departhours" select="$departhours"/>
+                                             <xsl:with-param name="departmin" select="$departmin"/>
+                                             <xsl:with-param name="arrivehours" select="$arrivehours"/>
+                                             <xsl:with-param name="arrivemin" select="$arrivetmin"/>
+                                             <xsl:with-param name="date" select="$date"/>
+                                             <xsl:with-param name="year" select="$year"/>
+                                         </xsl:call-template>
                                      </xsl:when>
                                      <xsl:when test="substring-before(substring-after(substring-after(TD[2]/STRONG, ' '), ' '), ' ') = 'November'">
                                          <xsl:variable name="moins" select="11"/>
                                          <xsl:value-of select="$moins"/>
+                                         <xsl:call-template name="arrivedate">
+                                             <xsl:with-param name="moins" select="$moins"/>
+                                             <xsl:with-param name="totaltimehour" select="$totaltimehour"/>
+                                             <xsl:with-param name="totaltimemin" select="$totaltimemin"/>
+                                             <xsl:with-param name="departhours" select="$departhours"/>
+                                             <xsl:with-param name="departmin" select="$departmin"/>
+                                             <xsl:with-param name="arrivehours" select="$arrivehours"/>
+                                             <xsl:with-param name="arrivemin" select="$arrivetmin"/>
+                                             <xsl:with-param name="date" select="$date"/>
+                                             <xsl:with-param name="year" select="$year"/>
+                                         </xsl:call-template>
                                      </xsl:when>
                                      
                                  </xsl:choose>
@@ -124,6 +257,25 @@
         </html>
     </xsl:template>
     <xsl:template name="arrivedate">
-        
+       <xsl:param name="moins"></xsl:param>
+       <xsl:param name="totaltimehour"></xsl:param>
+       <xsl:param name="totaltimemin"></xsl:param>
+       <xsl:param name="departhours"></xsl:param>
+       <xsl:param name="departmin"></xsl:param>
+       <xsl:param name="arrivehours"></xsl:param>
+       <xsl:param name="arrivemin"></xsl:param>
+       <xsl:param name="date"></xsl:param>
+       <xsl:param name="year"></xsl:param>
+       <xsl:choose>
+           <xsl:when test="$moins=1 or $moins=3 or $moins=5
+               or $moins=7 or $moins=8 or $moins=10 or $moins=12
+               or $moins=0">
+               <xsl:variable name="fullday" select="31"/>
+               <xsl:variable name="arrivetime" select="$departhours*60+$departmin+$totaltimehour*60+$totaltimemin"/>
+               <xsl:variable name="localarivetime" select="$arrivehours*60+$arrivemin"/>
+               
+               
+           </xsl:when>
+       </xsl:choose> 
     </xsl:template>
 </xsl:stylesheet>
