@@ -246,12 +246,12 @@
                                  <xsl:value-of select="normalize-space(substring-before(substring-after(TD[2]/text()[9], '('), ')'))"/>
                              </citycode>
                          </arrivecity>
-                         <costflight>
+                         <usualprice>
                              <xsl:value-of select="TD[8]/BIG/B/STRONG"/>
-                         </costflight>
-                         <phonefare>
-                             <xsl:value-of select="TD[8]/SPAN/B"/>
-                         </phonefare>
+                             </usualprice>
+                         <specialprice>
+                             <xsl:value-of select="substring-after(TD[8]/SPAN/B, 'fare ')"/>
+                         </specialprice>
                      </flight>
                     </xsl:if>
                 </xsl:for-each>
