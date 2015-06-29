@@ -267,14 +267,371 @@
        <xsl:param name="date"></xsl:param>
        <xsl:param name="year"></xsl:param>
        <xsl:choose>
-           <xsl:when test="$moins=1 or $moins=3 or $moins=5
-               or $moins=7 or $moins=8 or $moins=10 or $moins=12
-               or $moins=0">
-               <xsl:variable name="fullday" select="31"/>
+           <xsl:when test="$moins=5
+               or $moins=7 or $moins=8 or $moins=10 or $moins=12">              
                <xsl:variable name="arrivetime" select="$departhours*60+$departmin+$totaltimehour*60+$totaltimemin"/>
                <xsl:variable name="localarivetime" select="$arrivehours*60+$arrivemin"/>
+               <xsl:choose>
+                   <xsl:when test="($localarivetime - $arrivetime) &gt; 720">
+                       <xsl:choose>
+                           <xsl:when test="$date = 1">
+                               <xsl:choose>                        
+                                   <xsl:when test="$moins = 5">
+                                       30 April <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 7">
+                                       30 June <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 8">
+                                       31 July <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 10">
+                                       30 September <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 12">
+                                       30 November <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                               </xsl:choose>
+                           </xsl:when>
+                           <xsl:otherwise>
+                               <xsl:choose>
+                                   <xsl:when test="$moins = 5">
+                                       <xsl:value-of select="$date - 1"/> May <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 7">
+                                       <xsl:value-of select="$date - 1"/> July <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 8">
+                                       <xsl:value-of select="$date - 1"/> August <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 10">
+                                       <xsl:value-of select="$date - 1"/> October <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 12">
+                                       <xsl:value-of select="$date - 1"/> December <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                               </xsl:choose>
+                           </xsl:otherwise>                                                   
+                       </xsl:choose>
+                   </xsl:when>
+                   <xsl:when test="($localarivetime - $arrivetime) &lt; -720">
+                       <xsl:choose>
+                           <xsl:when test="$date = 31">
+                               <xsl:choose>
+                                   <xsl:when test="$moins = 12">
+                                       1 January <xsl:value-of select="$year + 1"/>
+                                   </xsl:when>                            
+                                   <xsl:when test="$moins = 5">
+                                       1 June <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 7">
+                                       1 August <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 8">
+                                       1 September <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 10">
+                                       1 November <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                               </xsl:choose>
+                           </xsl:when>
+                           <xsl:otherwise>
+                               <xsl:choose>                                 
+                                   <xsl:when test="$moins = 5">
+                                       <xsl:value-of select="$date + 1"/> May <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 7">
+                                       <xsl:value-of select="$date + 1"/> July <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 8">
+                                       <xsl:value-of select="$date + 1"/> August <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 10">
+                                       <xsl:value-of select="$date + 1"/> October <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 12">
+                                       <xsl:value-of select="$date + 1"/> December <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                               </xsl:choose>
+                           </xsl:otherwise>                                         
+                       </xsl:choose>
+                   </xsl:when>
+                   <xsl:otherwise>
+                       <xsl:choose>                           
+                           <xsl:when test="$moins = 5">
+                               <xsl:value-of select="$date"/> May <xsl:value-of select="$year"/>
+                           </xsl:when>
+                           <xsl:when test="$moins = 7">
+                               <xsl:value-of select="$date"/> July <xsl:value-of select="$year"/>
+                           </xsl:when>
+                           <xsl:when test="$moins = 8">
+                               <xsl:value-of select="$date"/> August <xsl:value-of select="$year"/>
+                           </xsl:when>
+                           <xsl:when test="$moins = 10">
+                               <xsl:value-of select="$date"/> October <xsl:value-of select="$year"/>
+                           </xsl:when>
+                           <xsl:when test="$moins = 12">
+                               <xsl:value-of select="$date"/> December <xsl:value-of select="$year"/>
+                           </xsl:when>
+                       </xsl:choose>
+                   </xsl:otherwise>
+               </xsl:choose>
                
-               
+           </xsl:when>
+           <xsl:when test="$moins=4 or $moins=6
+               or $moins=9 or $moins=11">             
+               <xsl:variable name="arrivetime" select="$departhours*60+$departmin+$totaltimehour*60+$totaltimemin"/>
+               <xsl:variable name="localarivetime" select="$arrivehours*60+$arrivemin"/>
+               <xsl:choose>
+                   <xsl:when test="($localarivetime - $arrivetime) &gt; 720">
+                       <xsl:choose>
+                           <xsl:when test="$date = 1">
+                               <xsl:choose>                                  
+                                   <xsl:when test="$moins = 4">
+                                       30 March <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 6">
+                                       30 May <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 9">
+                                       30 August <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 11">
+                                       30 October <xsl:value-of select="$year"/>
+                                   </xsl:when>                   
+                               </xsl:choose>
+                           </xsl:when>
+                           <xsl:otherwise>
+                               <xsl:choose>                                  
+                                   <xsl:when test="$moins = 4">
+                                       <xsl:value-of select="$date - 1"/> April <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 6">
+                                       <xsl:value-of select="$date - 1"/> June <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 9">
+                                       <xsl:value-of select="$date - 1"/> September <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 11">
+                                       <xsl:value-of select="$date - 1"/> November <xsl:value-of select="$year"/>
+                                   </xsl:when>              
+                               </xsl:choose>
+                           </xsl:otherwise>                                                   
+                       </xsl:choose>
+                   </xsl:when>
+                   <xsl:when test="($localarivetime - $arrivetime) &lt; -720">
+                       <xsl:choose>
+                           <xsl:when test="$date = 30">
+                               <xsl:choose>                                   
+                                   <xsl:when test="$moins = 4">
+                                       1 May <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 6">
+                                       1 July <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 9">
+                                       1 October <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 11">
+                                       1 December <xsl:value-of select="$year"/>
+                                   </xsl:when>                 
+                               </xsl:choose>
+                           </xsl:when>
+                           <xsl:otherwise>
+                               <xsl:choose>                                   
+                                   <xsl:when test="$moins = 4">
+                                       <xsl:value-of select="$date + 1"/> April <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 6">
+                                       <xsl:value-of select="$date + 1"/> June <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 9">
+                                       <xsl:value-of select="$date + 1"/> September <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins = 11">
+                                       <xsl:value-of select="$date + 1"/> November <xsl:value-of select="$year"/>
+                                   </xsl:when>                                 
+                               </xsl:choose>
+                           </xsl:otherwise>                                         
+                       </xsl:choose>
+                   </xsl:when>
+                   <xsl:otherwise>
+                       <xsl:choose> 
+                           <xsl:when test="$moins = 4">
+                               <xsl:value-of select="$date"/> April <xsl:value-of select="$year"/>
+                           </xsl:when>
+                           <xsl:when test="$moins = 6">
+                               <xsl:value-of select="$date"/> June <xsl:value-of select="$year"/>
+                           </xsl:when>
+                           <xsl:when test="$moins = 9">
+                               <xsl:value-of select="$date"/> September <xsl:value-of select="$year"/>
+                           </xsl:when>
+                           <xsl:when test="$moins = 11">
+                               <xsl:value-of select="$date"/> November <xsl:value-of select="$year"/>
+                           </xsl:when>                           
+                       </xsl:choose>
+                   </xsl:otherwise>
+               </xsl:choose>
+           </xsl:when>
+           <xsl:when test="$moins = 1 or $moins = 2 or $moins = 3">
+               <xsl:variable name="arrivetime" select="$departhours*60+$departmin+$totaltimehour*60+$totaltimemin"/>
+               <xsl:variable name="localarivetime" select="$arrivehours*60+$arrivemin"/>
+               <xsl:choose>
+                   <xsl:when test="$year div 4 = 0">
+                       <xsl:choose>
+                           <xsl:when test="($localarivetime - $arrivetime) &gt; 720">
+                               <xsl:choose>
+                                   <xsl:when test="$date = 1">
+                                       <xsl:choose>
+                                           <xsl:when test="$moins = 1">
+                                               31 December <xsl:value-of select="$year - 1"/>
+                                           </xsl:when>
+                                           <xsl:when test="$moins = 2">
+                                               31 January <xsl:value-of select="$year"/>
+                                           </xsl:when>
+                                           <xsl:when test="$moins = 3">
+                                               29 February <xsl:value-of select="$year"/>
+                                           </xsl:when>
+                                       </xsl:choose>
+                                   </xsl:when>
+                                   <xsl:otherwise>
+                                       <xsl:choose>
+                                           <xsl:when test="$moins = 1">
+                                               <xsl:value-of select="$date - 1"/> January <xsl:value-of select="$year"/>
+                                           </xsl:when>
+                                           <xsl:when test="$moins = 2">
+                                               <xsl:value-of select="$date - 1"/> February <xsl:value-of select="$year"/>
+                                           </xsl:when>
+                                           <xsl:when test="$moins = 3">
+                                               <xsl:value-of select="$date - 1"/> March <xsl:value-of select="$year"/>
+                                           </xsl:when>
+                                       </xsl:choose>
+                                   </xsl:otherwise>
+                               </xsl:choose>
+                           </xsl:when>
+                           <xsl:when test="($localarivetime - $arrivetime) &lt; 720">
+                               <xsl:choose>
+                                   <xsl:when test="$date = 31">
+                                       <xsl:choose>
+                                           <xsl:when test="$moins = 1">
+                                               1 February <xsl:value-of select="$year"/>
+                                           </xsl:when>
+                                           <xsl:when test="$moins = 3">
+                                               1 April <xsl:value-of select="$year"/>
+                                           </xsl:when>
+                                       </xsl:choose>
+                                   </xsl:when>
+                                   <xsl:when test="($moins = 2) and ($date = 29)">
+                                       1 March <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:otherwise>
+                                       <xsl:choose>
+                                           <xsl:when test="$moins = 1">
+                                               <xsl:value-of select="$date + 1"/> January <xsl:value-of select="$year"/>
+                                           </xsl:when>
+                                           <xsl:when test="$moins = 2">
+                                               <xsl:value-of select="$date + 1"/> February <xsl:value-of select="$year"/>
+                                           </xsl:when>
+                                           <xsl:when test="$moins = 3">
+                                               <xsl:value-of select="$date+1"/> March <xsl:value-of select="$year"/>
+                                           </xsl:when>
+                                       </xsl:choose>
+                                   </xsl:otherwise>
+                               </xsl:choose>
+                           </xsl:when>
+                           <xsl:otherwise>
+                               <xsl:choose>
+                                   <xsl:when test="$moins=1">
+                                       <xsl:value-of select="$date"/> January <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins=2">
+                                       <xsl:value-of select="$date"/> February <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins=3">
+                                       <xsl:value-of select="$date"/> March <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                               </xsl:choose>
+                           </xsl:otherwise>
+                       </xsl:choose>
+                   </xsl:when>
+                   <xsl:when test="$year div 4 != 0">
+                       <xsl:choose>
+                           <xsl:when test="($localarivetime - $arrivetime) &gt; 720">
+                               <xsl:choose>
+                                   <xsl:when test="$date = 1">
+                                       <xsl:choose>
+                                           <xsl:when test="$moins = 1">
+                                               31 December <xsl:value-of select="$year - 1"/>
+                                           </xsl:when>
+                                           <xsl:when test="$moins = 2">
+                                               31 January <xsl:value-of select="$year"/>
+                                           </xsl:when>
+                                           <xsl:when test="$moins = 3">
+                                               28 February <xsl:value-of select="$year"/>
+                                           </xsl:when>
+                                       </xsl:choose>
+                                   </xsl:when>
+                                   <xsl:otherwise>
+                                       <xsl:choose>
+                                           <xsl:when test="$moins = 1">
+                                               <xsl:value-of select="$date - 1"/> January <xsl:value-of select="$year"/>
+                                           </xsl:when>
+                                           <xsl:when test="$moins = 2">
+                                               <xsl:value-of select="$date - 1"/> February <xsl:value-of select="$year"/>
+                                           </xsl:when>
+                                           <xsl:when test="$moins = 3">
+                                               <xsl:value-of select="$date - 1"/> March <xsl:value-of select="$year"/>
+                                           </xsl:when>
+                                       </xsl:choose>
+                                   </xsl:otherwise>
+                               </xsl:choose>
+                           </xsl:when>
+                           <xsl:when test="($localarivetime - $arrivetime) &lt; 720">
+                               <xsl:choose>
+                                   <xsl:when test="$date = 31">
+                                       <xsl:choose>
+                                           <xsl:when test="$moins = 1">
+                                               1 February <xsl:value-of select="$year"/>
+                                           </xsl:when>
+                                           <xsl:when test="$moins = 3">
+                                               1 April <xsl:value-of select="$year"/>
+                                           </xsl:when>
+                                       </xsl:choose>
+                                   </xsl:when>
+                                   <xsl:when test="($moins = 2) and ($date = 28)">
+                                       1 March <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:otherwise>
+                                       <xsl:choose>
+                                           <xsl:when test="$moins = 1">
+                                               <xsl:value-of select="$date + 1"/> January <xsl:value-of select="$year"/>
+                                           </xsl:when>
+                                           <xsl:when test="$moins = 2">
+                                               <xsl:value-of select="$date + 1"/> February <xsl:value-of select="$year"/>
+                                           </xsl:when>
+                                           <xsl:when test="$moins = 3">
+                                               <xsl:value-of select="$date+1"/> March <xsl:value-of select="$year"/>
+                                           </xsl:when>
+                                       </xsl:choose>
+                                   </xsl:otherwise>
+                               </xsl:choose>
+                           </xsl:when>
+                           <xsl:otherwise>
+                               <xsl:choose>
+                                   <xsl:when test="$moins=1">
+                                       <xsl:value-of select="$date"/> January <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins=2">
+                                       <xsl:value-of select="$date"/> February <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                                   <xsl:when test="$moins=3">
+                                       <xsl:value-of select="$date"/> March <xsl:value-of select="$year"/>
+                                   </xsl:when>
+                               </xsl:choose>
+                           </xsl:otherwise>
+                       </xsl:choose>
+                   </xsl:when>
+               </xsl:choose>
            </xsl:when>
        </xsl:choose> 
     </xsl:template>
