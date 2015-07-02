@@ -1,0 +1,202 @@
+﻿<SourceDoc>
+	<HTML>
+		<HEAD>
+			<TITLE>Avro -  Search Results</TITLE>
+			<META content="text/html; charset=iso-8859-1" http-equiv="Content-Type"/>
+			<LINK href="css/avro/ie_win.css" rel="stylesheet" type="text/css"/>
+			<LINK href="css/avro/calendar.css" rel="stylesheet" type="text/css"/>
+			<SCRIPT type="text/javascript">  &lt;!--    var s_images = 'images/avro';    var s_css = 'css/avro';  //--&gt;</SCRIPT>
+			<SCRIPT src="scripts/calendar.js" type="text/javascript"/>
+			<SCRIPT src="scripts/call-back-submit-check.js" type="text/javascript"/>
+			<SCRIPT src="scripts/popup.js" type="text/javascript"/>
+		</HEAD>
+		<BODY>
+			<TABLE align="center" border="0" cellpadding="0" cellspacing="0" width="750">
+				<TR>
+					<TD valign="top">
+						<SCRIPT>var newwindow;function poptastic(url){	newwindow=window.open(url,'name','height=500,width=800');	if (window.focus) {newwindow.focus()}}</SCRIPT>
+						<TABLE border="0" cellpadding="0" cellspacing="0" width="750">
+							<TR>
+								<TD width="9">
+									<IMG alt="" height="1" src="images/avro/spacer.gif" width="9"/>
+								</TD>
+								<TD width="161">
+									<IMG alt="" height="1" src="images/avro/spacer.gif" width="161"/>
+								</TD>
+								<TD width="471">
+									<IMG alt="" height="1" src="images/avro/spacer.gif" width="471"/>
+								</TD>
+								<TD width="9">
+									<IMG alt="" height="1" src="images/avro/spacer.gif" width="9"/>
+								</TD>
+								<TD width="10">
+									<IMG alt="" height="1" src="images/avro/spacer.gif" width="10"/>
+								</TD>
+								<TD width="90">
+									<IMG alt="" height="1" src="images/avro/spacer.gif" width="90"/>
+								</TD>
+							</TR>
+							<TR>
+								<TD height="59">
+									<IMG alt="" height="1" src="images/avro/spacer.gif" width="9"/>
+								</TD>
+								<TD>
+									<IMG alt="For cheap flights call us on 0871 423 8550" src="images/avro/callUs.gif"/>
+								</TD>
+								<TD align="right">
+									<P style="font-size:16px; font-family:Arial, sans-serif; font-weight:bold; color:#002258;">Looking for cheap flights online? Avro, the UK's <A class="header" href="about-us.htm?sessionid=0498889b84e35119895e3fbb7fc14d73">award winning</A> cheap ticket operator, for low-cost  flights</P>
+								</TD>
+								<TD>
+									<IMG alt="" height="1" src="images/avro/spacer.gif" width="9"/>
+								</TD>
+								<TD rowspan="2">
+									<IMG alt="" height="1" src="images/avro/spacer.gif" width="10"/>
+								</TD>
+								<TD rowspan="2">
+									<A href="index.htm?sessionid=0498889b84e35119895e3fbb7fc14d73">
+										<IMG alt="Cheap flights worldwide from Avro, the low-cost flight provider" border="0" height="90" src="images/avro/logos/logo.gif" width="90"/>
+									</A>
+								</TD>
+							</TR>
+							<TR>
+								<TD height="31">
+									<IMG alt="" border="0" height="31" src="images/avro/navLft.gif" width="10"/>
+								</TD>
+								<TD class="avroRed" colspan="2">
+									<TABLE border="0" cellpadding="0" cellspacing="0" summary="table contains main site navigation">	
+									</TABLE>
+								</TD>
+								<TD>
+									<IMG alt="" src="images/avro/navRgt.gif"/>
+								</TD>
+							</TR>
+							<TR>
+								<TD colspan="5">
+									<IMG alt="" height="5" src="images/avro/spacer.gif" width="9"/>
+								</TD>
+							</TR>
+						</TABLE>
+						<TABLE/>
+					</TD>
+				</TR>
+				<TR>
+					<TD>
+						<TABLE border="0" cellpadding="0" cellspacing="0" width="100%">
+							<TR>
+								<TD valign="top">
+									<TABLE border="0" cellpadding="0" cellspacing="0" width="100%">
+										<TR>
+											<TD valign="top" width="20%">
+												<SCRIPT language="JavaScript" src="routes-js.htm" type="text/javascript"/>
+												<SCRIPT language="JavaScript" src="scripts/duration-rtn-date.js" type="text/javascript"/>
+												<FORM action="results.htm" id="panel" method="post" name="search">
+													<INPUT name="sessionid" type="hidden" value="0498889b84e35119895e3fbb7fc14d73"/>
+													<TABLE cellpadding="0" cellspacing="0" class="input" width="140">
+														<TR>
+															<TD>
+																<IMG alt="search panel" border="0" height="28" src="images/avro/book/srcPnlTopLft.gif" width="10"/>
+															</TD>
+															<TD>
+																<IMG alt="search panel" border="0" height="28" src="images/avro/book/srcPnlTitle.gif" width="120"/>
+															</TD>
+															<TD>
+																<IMG alt="search panel" border="0" height="28" src="images/avro/book/srcPnlTopRgt.gif" width="10"/>
+															</TD>
+														</TR>
+														<TR>
+															<TD colspan="3">
+																<TABLE border="0" cellpadding="0" cellspacing="0" class="srcPnlTable" width="100%">
+																	<TR>
+																		<TD align="center">
+																			<TABLE bgcolor="#FFFFFF" border="0" cellpadding="1" cellspacing="3" width="98.5%">
+																				<TR>
+																					<TD align="left" class="input" colspan="2">
+																						<SPAN class="inputHdr">Departing from:</SPAN>
+																						<BR/>
+																						<SELECT class="input" id="dep_airport" name="dep_airport" onchange="refresh_routes()" size="1" style="width: 130px" width="130px">
+																							<OPTION label="Aberdeen" value="ABZ">Aberdeen</OPTION>
+																							<OPTION label="Alicante, Costa Blanca" value="ALC">Alicante, Costa Blanca</OPTION>
+																							<OPTION label="All Overseas Airports" selected="selected" value="ALL">All Overseas Airports</OPTION>
+																							<OPTION label="Almeria, Costa del Almeria" value="LEI">Almeria, Costa del Almeria</OPTION>
+																							<OPTION label="Arrecife, Lanzarote" value="ACE">Arrecife, Lanzarote</OPTION>
+																							<OPTION label="Balearic Islands" value="BAL">Balearic Islands</OPTION>
+																							<OPTION label="Banjul" value="BJL">Banjul</OPTION>
+																							<OPTION label="Barcelona" value="BCN">Barcelona</OPTION>
+																							<OPTION label="Birmingham" value="BHX">Birmingham</OPTION>
+																							<OPTION label="Bristol" value="BRS">Bristol</OPTION>
+																							<OPTION label="Canaries Airports" value="CAN">Canaries Airports</OPTION>
+																							<OPTION label="Cyprus Airports" value="CYP">Cyprus Airports</OPTION>
+																							<OPTION label="East Midlands " value="EMA">East Midlands </OPTION>
+																							<OPTION label="Faro" value="FAO">Faro</OPTION>
+																							<OPTION label="Fuerteventura" value="FUE">Fuerteventura</OPTION>
+																							<OPTION label="Funchal" value="FNC">Funchal</OPTION>
+																							<OPTION label="Gatwick Airports" value="LGE">Gatwick Airports</OPTION>
+																							<OPTION label="Gibraltar" value="GIB">Gibraltar</OPTION>
+																							<OPTION label="Glasgow International" value="GLA">Glasgow International</OPTION>
+																							<OPTION label="Ibiza" value="IBZ">Ibiza</OPTION>
+																							<OPTION label="Jerez de la Frontera" value="XRY">Jerez de la Frontera</OPTION>
+																							<OPTION label="Larnaca, Cyprus" value="LCA">Larnaca, Cyprus</OPTION>
+																							<OPTION label="Las Palmas, Gran Canaria" value="LPA">Las Palmas, Gran Canaria</OPTION>
+																							<OPTION label="London Airports" value="LON">London Airports</OPTION>
+																							<OPTION label="London Gatwick " value="LGW">London Gatwick </OPTION>
+																							<OPTION label="London Luton " value="LTN">London Luton </OPTION>
+																							<OPTION label="London Stansted " value="STN">London Stansted </OPTION>
+																							<OPTION label="Mahon, Menorca" value="MAH">Mahon, Menorca</OPTION>
+																							<OPTION label="Malaga, Costa del Sol" value="AGP">Malaga, Costa del Sol</OPTION>
+																							<OPTION label="Manchester " value="MAN">Manchester </OPTION>
+																							<OPTION label="Midlands Airports" value="MID">Midlands Airports</OPTION>
+																							<OPTION label="Murcia, Costa Calida" value="MJV">Murcia, Costa Calida</OPTION>
+																							<OPTION label="Newcastle" value="NCL">Newcastle</OPTION>
+																							<OPTION label="Northern Airports" value="NTH">Northern Airports</OPTION>
+																							<OPTION label="Palma, Mallorca" value="PMI">Palma, Mallorca</OPTION>
+																							<OPTION label="Paphos, Cyprus" value="PFO">Paphos, Cyprus</OPTION>
+																							<OPTION label="Portugal" value="POR">Portugal</OPTION>
+																							<OPTION label="Scottish Airports" value="SCO">Scottish Airports</OPTION>
+																							<OPTION label="South West Airports" value="SWE">South West Airports</OPTION>
+																							<OPTION label="Spain" value="SPA">Spain</OPTION>
+																							<OPTION label="Tenerife South" value="TFS">Tenerife South</OPTION>
+																						</SELECT>
+																					</TD>
+																				</TR>
+																			</TABLE>
+																		</TD>
+																	</TR>
+																</TABLE>
+															</TD>
+														</TR>
+														
+													</TABLE>
+												</FORM>
+												<SCRIPT language="JavaScript" type="text/JavaScript">&lt;!--refresh_routes();--&gt;</SCRIPT>
+											</TD>
+											<TD width="1%"> </TD>
+											<TD valign="top">
+												<TABLE border="0" cellpadding="0" cellspacing="0" class="content" width="100%">
+													
+													<TR>
+														<TD colspan="11">
+															<IMG alt="" height="10" src="images/avro/spacer.gif" width="10"/>
+														</TD>
+													</TR>	
+												</TABLE>
+												<IMG height="1" src="http://switch.atdmt.com/action/cdkavr_resultspage_6" width="1"/>
+											</TD>
+										</TR>
+									</TABLE>
+								</TD>
+							</TR>
+						</TABLE>
+					</TD>
+				</TR>
+			</TABLE>
+			<SCRIPT language="JavaScript1.1" type="text/javascript">&lt;!--function sitestat(ns_l){ns_l+=&quot;&amp;ns__t=&quot;+(newDate()).getTime();ns_pixelUrl=ns_l;ns_0=document.referrer;ns_0=(ns_0.lastIndexOf(&quot;/&quot;)==ns_0.length-1)?ns_0.substring(ns_0.lastIndexOf(&quot;/&quot;),0):ns_0;if(ns_0.length&gt;0)ns_l+=&quot;&amp;ns_referrer=&quot;+escape(ns_0);if(document.images){ns_1=new Image();ns_1.src=ns_l;}elsedocument.write(&quot;&lt;img src=&quot;+ns_l+&quot; width='1' height='1'&gt;&quot;);}sitestat(&quot;http://uk.sitestat.com/globus/avro/s?results&amp;category=AVW&quot;);//--&gt;</SCRIPT>
+			<SCRIPT language="javascript" src="avro_rwtag.js" type="text/javascript"/>
+			<SCRIPT language="javascript">rwTag();</SCRIPT>
+			<NOSCRIPT>
+				<IMG alt="rwtag" border="0" height="1" name="rwtag" src="http://www.sptag2.com/rwtag.gif?rw.pf=avro&amp;rw.st=nojavascript" width="1"/>
+			</NOSCRIPT>
+		</BODY>
+	</HTML>
+	<Cookies/>
+	<Cookies/>
+</SourceDoc>
