@@ -31,7 +31,7 @@
         Уменьшите значения n и i!
       </xsl:when>
 <!-- присваивание untouched=1 происходит в блоке otherwise,
-        иначе обработаем изменения интервалов -->
+        иначе обработаем изменения интервалов: -->
       <xsl:when test="$n &lt; $i and $untouched != 1">
         <xsl:call-template name="for">
           <xsl:with-param name="n" select="$i"/>
@@ -46,6 +46,7 @@
         </xsl:call-template>
       </xsl:when>
       
+  <!-- более 297 каталогов приводит к перегрузке -->
      <xsl:when test="$n &gt; 297">
        <xsl:call-template name="for">
          <xsl:with-param name="i" select="$i"/>
