@@ -3,18 +3,17 @@
   <xsl:output method="xml" indent="yes"/>
   
   <xsl:template match="/">
-     <xsl:call-template name="for">
+     <xsl:call-template name="piz">
        <xsl:with-param name="i" select="1"/>
        <xsl:with-param name="n" select="count(/catalog/cd)"/>
      </xsl:call-template>
   </xsl:template>
   
-  <xsl:template name='for'>
+  <xsl:template name='piz'>
     
     <xsl:param name="i" select="1"/>
     <xsl:param name="n" select="count(/catalog/cd)"/>
-<!--переменна untouched пригодится ниже, она покажет по какой причине i стало больше n-->
-    <xsl:param name="untouched" select="0"></xsl:param>
+    <xsl:param name="cd" select="/catalog/cd"></xsl:param>
     <xsl:variable name="maxNumCd" select="count(/catalog/cd)"/>
     
     <xsl:choose>
@@ -30,39 +29,28 @@
       <xsl:when test="$n &gt; $maxNumCd and $i &gt; $maxNumCd">
         Уменьшите значения n и i!
       </xsl:when>
-<!-- присваивание untouched=1 происходит в блоке otherwise,
-        иначе обработаем изменения интервалов -->
-      <xsl:when test="$n &lt; $i and $untouched != 1">
-        <xsl:call-template name="for">
+
+      <xsl:when test="$n &lt; $i">
+        <xsl:call-template name="piz">
           <xsl:with-param name="n" select="$i"/>
           <xsl:with-param name="i" select="$n"/>
         </xsl:call-template>
       </xsl:when>
       
       <xsl:when test="$n &gt; $maxNumCd">
-        <xsl:call-template name="for">
+        <xsl:call-template name="piz">
           <xsl:with-param name="n" select="$maxNumCd"/>
           <xsl:with-param name="i" select="$i"/>
         </xsl:call-template>
       </xsl:when>
       
-     <xsl:when test="$n &gt; 297">
-       <xsl:call-template name="for">
-         <xsl:with-param name="i" select="$i"/>
-         <xsl:with-param name="n" select="297"/>
-       </xsl:call-template>
-       Выведено 297 каталогов из <xsl:value-of select="$maxNumCd"/>
-     </xsl:when>
+  <!-- Так как метод Пиза нормально обрабатывается процессором при
+   $allCd > 15000 не будем ограничивать количество выводимых каталогов cd -->
       
       <xsl:otherwise>
-        <xsl:if test="$i &lt;= $n ">
-          <xsl:copy-of select="/catalog/cd[$i]"/>
-          <xsl:call-template name="for">
-            <xsl:with-param name="i" select="$i+1"/>
-            <xsl:with-param name="untouched" select="1"/>
-            <xsl:with-param name="n" select="$n"></xsl:with-param>
-          </xsl:call-template>
-        </xsl:if>
+          <xsl:for-each select="$cd[position() &gt;= $i and position() &lt;= $n]">
+            <xsl:copy-of select="."/>
+          </xsl:for-each>
       </xsl:otherwise>
       
     </xsl:choose>
