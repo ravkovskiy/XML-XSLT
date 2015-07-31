@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simpleDocument>
+    <A>
+        <B/>
+        <C>
+            <D>
+                <E/>
+            </D>
+            <F/>
+            <G/>
+        </C>
+    </A>
+    
+    <numbers>
+        <int>1</int>
+        <byte>2</byte>
+        <int>2</int>
+        <byte>3</byte>
+    </numbers>
+    
+    <href>
+        <location>www.gp-sol.de</location>
+    </href>
+</simpleDocument>
