@@ -1,43 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<menu>
-	<item id="1" level="1">
-		<name>item1</name>
-	</item>
-	<item id="2" level="1">
-		<name>item2</name>
-	</item>
-	<item id="3" level="2">
-		<name>item3</name>
-	</item>
-	<item id="4" level="3">
-		<name>item4</name>
-	</item>
-	<item id="5" level="2">
-		<name>item5</name>
-	</item>
-	<item id="6" level="3">
-		<name>item6</name>
-	</item>
-	<item id="7" level="1">
-		<name>item7</name>
-	</item>
-	<item id="8" level="2">
-		<name>item8</name>
-	</item>
-	<item id="9" level="2">
-		<name>item9</name>
-	</item>
-	<item id="10" level="3">
-		<name>item10</name>
-	</item>
-	<item id="11" level="4">
-		<name>item11</name>
-	</item>
-	<item id="12" level="6">
-		<name>item12</name>
-	</item>
-	<item id="13" level="136">
-		<name>item13</name>
-	</item>
-</menu>
+<date>
+	<day>02</day>
+	<month>08</month>
+	<year>2015</year>
+</date>
 
