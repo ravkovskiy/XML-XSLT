@@ -8,6 +8,6 @@
    </xsl:template>
     
     <xsl:template match='text()'>
-        <xsl:value-of select="translate(., '1234567890', '')"/>
+        <xsl:value-of select="translate(., 'abcdefghijklmnopqrstuvwxyzабвгдеёжзийклмнопрстуфхцчшщьыъэюя', 'ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯ')"/>
     </xsl:template>
 </xsl:stylesheet>

@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<cor>
+    <string>smart git</string>
+    <substr> git</substr>
+    <substitute>phone</substitute>
+</cor>
+   
 
 
