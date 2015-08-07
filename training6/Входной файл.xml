@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<goods>
+    
+    <item class="fruit">apple</item>
+    
+    <item class="fruit">pineapple</item>
+    
+    <item class="equipment">basket</item>
+    <item class="fruit">apineapple</item>
+    <item class="fruit">pineapple</item>
+    <item class="equipment">sbasket</item>
+    <item class="equipment">basket</item>
+</goods>
+
+   
+
+
