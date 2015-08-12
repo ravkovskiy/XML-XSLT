@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
-    <xs:include schemaLocation="xsd3.xsd"></xs:include>
-   <xs:element name="person" type="personType"/>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified">
+    <!-- Схема описывает человека: имя, дата рождения, дополнительная информация -->
+    <!-- В подключаемой схеме определены элементы для описания семейного положения и наличия детей -->
+    <xs:include schemaLocation="xsd3.xsd"/>
     
-    <xs:complexType name="personType">
-        <xs:sequence>
-            <xs:element name="name" type="xs:string"/>
-            <xs:element name="DOB" type="xs:date" minOccurs="0"/>
-            <xs:group ref="group"></xs:group>
-            
-        </xs:sequence>
-    </xs:complexType>
+    <xs:element name="name" type="xs:string"/>
+    <xs:element name="info" type="xs:string"/>
     
-    
+   <xs:element name="person">
+       <xs:complexType>
+           <xs:sequence>
+               <xs:element ref="name"/>
+               <xs:element name="DOB" type="xs:date"/>
+              <xs:any maxOccurs="unbounded" minOccurs="0"/>
+           </xs:sequence>
+       </xs:complexType>
+   </xs:element> 
 </xs:schema>

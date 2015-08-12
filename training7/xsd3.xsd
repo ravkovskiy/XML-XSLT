@@ -2,25 +2,19 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     elementFormDefault="qualified">
     
-    <xs:group name="group">
-        <xs:sequence>
-            <xs:element name="maritalStatus" type="maritalType"/>
-            <xs:element name="children" type="childrenType" minOccurs="0"/>
-        </xs:sequence>
-    </xs:group>
-    
-        <xs:simpleType name="maritalType">
+    <xs:element name="maritalStatus">
+        <xs:simpleType>
             <xs:restriction base="xs:string">
                 <xs:pattern value="married|not married"/>
             </xs:restriction>
         </xs:simpleType>
-    
-    
-    <xs:complexType name="childrenType">
-        <xs:sequence>
-            <xs:element name="person" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-    </xs:complexType>
+    </xs:element>
+    <xs:element name="children">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:any maxOccurs="unbounded"></xs:any>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
     
 </xs:schema>
