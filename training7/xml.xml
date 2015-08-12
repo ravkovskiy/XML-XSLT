@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <person xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="xsd2.xsd">
+    <name>Елизавета II</name>
+        <DOB>1926-04-21</DOB>
+    <maritalStatus>married</maritalStatus>
+    <children>
+        <person>
+            <name>Чарльз, принц Уэльский</name>
+            <DOB>1948-10-14</DOB>
+            <maritalStatus>married</maritalStatus>
+            <children>
+                <person>
+                    <name>Уильям, герцог Кембриджский</name>
+                    <DOB>1982-06-21</DOB>
+                    <maritalStatus>married</maritalStatus>
+                    <children>
+                            <name>Джордж Кембриджский</name>
+                            <name>Шарлотта Кембриджская</name>
+                    </children>
+                </person>
+                <person>
+                    <name>Генри Уэльский</name>
+                    <DOB>1984-09-15</DOB>
+                    <maritalStatus>not married</maritalStatus>
+                </person>
+            </children>
+        </person>
+        <person>
+            <name>Анна</name>
+            <DOB>1950-08-15</DOB>
+            <maritalStatus>not married</maritalStatus>
+        </person>
+        <person>
+            <name>Эндрю, герцог Йоркский</name>
+            <DOB>1960-02-19</DOB>
+            <maritalStatus>not married</maritalStatus>
+            <children>
+                <person>
+                    <name>Беатриса Йоркская</name>
+                    <DOB>1988-08-08</DOB>
+                    <maritalStatus>not married</maritalStatus>
+                </person>
+                <person>
+                    <name>Евгения Йоркская</name>
+                    <DOB>1990-03-23</DOB>
+                    <maritalStatus>not married</maritalStatus>
+                </person>
+            </children>
+        </person>
+        <person>
+            <name>Эдвард, граф Уэссекский</name>
+            <DOB>1964-03-10</DOB>
+            <maritalStatus>married</maritalStatus>
+            <children>
+                <name>Джеймс, висконт Северн</name>
+                <name>Луиза Виндзор</name>
+            </children>
+        </person>
+    </children>
+</person>
+   
+
+

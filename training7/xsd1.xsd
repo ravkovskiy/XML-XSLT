@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified" vc:minVersion="1.0" vc:maxVersion="1.1">
+    <xs:element name='person' type="personType"/>
+   
+    <xs:complexType name="personType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="DOB" type="xs:date"/>
+            <xs:element name="maritalStatus">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="married|not married"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="children" type="childrenType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="childrenType">
+        <xs:sequence>
+            <xs:element name="person" type="personType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

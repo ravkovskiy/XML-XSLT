@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:include schemaLocation="xsd3.xsd"></xs:include>
+   <xs:element name="person" type="personType"/>
+    
+    <xs:complexType name="personType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="DOB" type="xs:date" minOccurs="0"/>
+            <xs:group ref="group"></xs:group>
+            
+        </xs:sequence>
+    </xs:complexType>
+    
+    
+</xs:schema>
